@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row mt-5 mb-2 ">
+      <div class="col-md-2">
+        <h3 class="text-uppercase">Filtros</h3>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Proyecto</mat-label>
+            <input matInput  name="filtro" [(ngModel)]="filtro" placeholder="Buscar por nombre..."
+                   aria-label="State"
+                   [formControl]="stateCtrl" >
+            <mat-icon *ngIf="filtro.length > 0"  style="border:none ; background:none; cursor: pointer; position: absolute;" (click)="filtrar()">search</mat-icon>
+          </mat-form-field>
+          <br>    
+          <mat-slide-toggle
+            [checked]="stateCtrl.disabled"
+            (change)="stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()">
+            Desabilitar?
+          </mat-slide-toggle>
+          <button type="submit" (click)="reset()" class="btn btn-dark mt-3">Todos</button>
+      </div>
+        <div class="col-10 ">
+          <h3 class="text-center text-uppercase">Proyectos</h3>
+          <div class="row m-2">
+            <ng-container *ngIf="proyectos.length>0">
+            <div *ngFor="let item of proyectos" class="col-md-4 mb-4">
+              <div class="card" >
+                <img *ngIf="item?.foto" [routerLink]="'/proyectos/verProyecto/'+item.id+'/'+item.nombre" style="cursor: pointer;" src="http://localhost:8080/api/upload/img/{{item.foto}}" class="card-img-top" alt="...">
+                <img *ngIf="!item?.foto" src="" class="card-img-top" alt="no image">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.nombre}}</h5>
+                  <p class="card-text">{{ item.descripcion | slice:0:100 }}</p>
+                  <a [routerLink]="'/proyectos/verProyecto/'+item.id+'/'+item.nombre" class="btn btn-primary">Ver más</a>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+            <ng-container *ngIf="proyectos.length<=0">
+              <mat-list-item>
+                <mat-icon mat-list-icon>info</mat-icon>
+                <div mat-line>No hay proyectos</div>
+              </mat-list-item>
+            </ng-container>
+            
+            
+          </div>
+          <div class="left">
+            <paginator-app *ngIf="pagination" [pagination]="pagination"></paginator-app>
+          </div>
+
+
+          
+        </div>
+  
+    </div>

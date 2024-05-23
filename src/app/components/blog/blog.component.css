@@ -1,0 +1,24 @@
+.blog{
+    margin-top: 1.8cm;
+}
+.btn-primary{
+    background-color: #FF535B;
+    border-color: #FF535B;
+    color: #fff;
+    
+}
+.text-white{
+    border-color:#FF535B;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.custom-chip {
+    width: 90px;
+    height: 5px;
+    text-align: center;
+  }
+  .float-right{
+      float: right;
+  }
+

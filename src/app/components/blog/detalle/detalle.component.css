@@ -1,0 +1,49 @@
+.post-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 3cm;
+    margin-bottom: 5cm;
+  }
+  
+  .post-header {
+    text-align: center;
+  }
+  
+  .post-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .custom-chip {
+    width: 90px;
+    height: 5px;
+    text-align: center;
+  }
+  .post-header img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .post-tags {
+    margin: 1.5rem 0;
+  }
+  
+  .post-tags ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .post-tags li {
+    margin-right: 1rem;
+    font-size: 0.875rem;
+    color: gray;
+  }
+  
+  .post-content {
+    line-height: 1.5;
+    font-size: 1.125rem;
+  }

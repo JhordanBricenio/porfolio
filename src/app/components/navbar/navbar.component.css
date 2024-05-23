@@ -1,0 +1,146 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.example-icon{
+  color: black;
+  font-size: 1.1rem;
+  border-bottom: 2px solid hsl(200, 2%, 70%);
+  outline: none;
+  box-shadow: none;
+
+}
+
+.text-white{
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid hsl(200, 2%, 70%);
+  outline: none;
+  box-shadow: none;
+}
+
+#offcanvasNavbar{
+  background: #202942;
+  font-family: "Mulish", sans-serif;
+  position: fixed;
+  width: 20%;
+  color: #adb5bd;
+}
+.fa-list{
+  color: #3880c7;
+  box-shadow: none;
+}
+.navbar-toggler{
+  box-shadow: none;
+}
+#navbar {
+    background-color: #fff;
+    color: #000;
+    /*navbar estático*/
+    position: fixed;
+}
+#topnav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  border: 0;
+  transition: all 0.5s ease;
+}
+
+.line{
+  text-decoration: none;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  text-align: center;
+  color: black;
+  border-bottom: #e5e7eb;
+
+}
+.line:hover{
+  color: #000;
+  border-bottom: 2px solid #b2b4b5;
+  transition: all 0.5s ease;
+}
+
+
+.font-weight-bold {
+  font-size: 0.875rem;
+  color: rgb(113, 110, 110);
+  font-family: "Mulish", sans-serif;
+}
+.img{
+  width: 100%;
+}
+
+
+.lead {
+  font-size: 12px;
+}
+
+.red-social {
+  color: #adb5bd !important;
+  border-radius: 50%;
+  border: 2px solid #adb5bd;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 0.3s ease-in-out;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.red-social2 {
+  color: #adb5bd !important;
+  border-radius: 50%;
+  border: 2px solid #adb5bd;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  transition: 0.3s ease-in-out;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.red-social:hover {
+  color: #fff !important;
+  border: 2px solid #fff;
+}
+
+.red-social2:hover {
+  color: #fff !important;
+  border: 2px solid #fff;
+}
+.dropdown-toggle{
+  color: #adb5bd;
+  font-size: 10px;
+  margin-right: 1rem;
+  border-bottom: #000;
+  padding-top: 10px;
+  padding-bottom: 11px;
+  border-radius: 70%;
+  background-color: #fff;
+}
+.dropdown-menu{
+  padding: 0;
+  --bs-dropdown-link-active-bg:#FF535B !important;
+  
+}
+@media (max-width: 991px) {
+  .right-side {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .auto {
+      display: none;
+  }
+}
+
+
+

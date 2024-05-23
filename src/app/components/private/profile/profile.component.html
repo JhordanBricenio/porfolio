@@ -1,0 +1,47 @@
+<detalle-user *ngIf="usuarioSeleccionado" [usuario] ="usuarioSeleccionado"></detalle-user>
+<mat-card *ngIf="usuario" style="margin-left: 10px;" class="mt-5">
+    <h1>Detalles del perfil</h1>
+    <mat-card-content>
+      <div class = "bootstrap-wrapper">
+        <div class = "container">
+          <div class = "text-center">
+            <img *ngIf="usuario?.foto" style="cursor: pointer;" (click)="abrirModal(usuario)" src="http://localhost:8080/api/upload/img/{{usuario.foto}}" alt="{{usuario.foto}}"
+            class = "avatar">
+            <img *ngIf="!usuario?.foto" style="cursor: pointer;" (click)="abrirModal(usuario)" src="https://www.unmc.edu/cihc/_images/faculty/default.jpg" alt="no foto"
+            class = "avatar">
+            <h1 class="mt20">{{ usuario.nombres }} {{ usuario.apellidos}}</h1>
+          </div>
+          <div class = "row">
+            <div class = "col-md-10 offset-md-1">
+              <table class = "table text-center">
+                <tr>
+                  <td>Correo Electrónico</td>
+                  <td>{{ usuario.email }}</td>
+                </tr>
+                <tr>
+                  <td>ID</td>
+                  <td>{{ usuario.id }}</td>
+                </tr>
+                <tr>
+                  <td>Teléfono</td>
+                  <td>{{ usuario.telefono }}</td>
+                </tr>
+                <tr>
+                  <td>Rol</td>
+                  <td>{{authService.getUserRole()}}</td>
+                </tr>
+                <tr>
+                  <td>Estado</td>
+                  <td>{{usuario.enabled? "Activo":"Desabilitado"}}</td>
+                </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <mat-card-actions class = "text-center">
+        <button mat-raised-button color = "primary">Actualizar</button>
+        <button mat-raised-button color = "accent">Compartir</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>

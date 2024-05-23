@@ -1,0 +1,23 @@
+.mt-5{
+    margin-top: 5cm;
+}
+h1.text-center.mb-5 {
+    margin-top: 5rem;
+}
+.card-img-top {
+    border-radius: 0.5rem;
+}
+.title{
+    text-decoration: inherit;
+    color: #8c8e8f;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-family:     "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.title:hover{
+    color: #000;
+    border-bottom: 2px solid #b2b4b5;
+    transition: all 0.5s ease;
+  }

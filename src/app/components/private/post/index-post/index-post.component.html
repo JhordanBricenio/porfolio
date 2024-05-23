@@ -1,0 +1,40 @@
+<app-detalle-post *ngIf="proyectoSeleccioando" [post]="proyectoSeleccioando"></app-detalle-post>
+<mat-card class="mt-5">
+    <ng-container *ngIf="posts.length>0">
+      <mat-list>
+        <div mat-subheader>
+          Todas los Posts
+        </div>
+        <mat-list-item *ngFor="let item of posts">
+          <img *ngIf="item?.imagen" mat-list-avatar (click)="abrirModal(item)"
+            src="http://localhost:8080/api/upload/img/{{item.imagen}}" alt="..." style="cursor: pointer;">
+          <mat-icon *ngIf="!item?.imagen" mat-list-icon (click)="abrirModal(item)"
+            style="cursor: pointer;">category</mat-icon>
+          <div mat-line>{{item.titulo}}</div>
+          <div mat-line>{{item.fecha}}</div>
+          <mat-card-content>
+            <mat-card-actions>
+              <button class="m-2" [routerLink]="['/admin/editPost',item.id]" mat-flat-button
+                color="primary">Editar</button>
+              <button name="eliminar" (click)="delete(item)" mat-fab color="warn">
+                <mat-icon>auto_delete</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </ng-container>
+    <ng-container *ngIf="posts.length==0">
+      <mat-list-item>
+        <mat-icon mat-list-icon>info</mat-icon>
+        <div mat-line>No hay posts</div>
+      </mat-list-item>
+    </ng-container>
+    <div class="container text-center mt-2">
+      <a routerLink="/admin/createPost" mat-mini-fab color="primary"
+        aria-label="Example icon button with a plus one icon">
+        <mat-icon mat-list-icon>library_add</mat-icon>
+      </a>
+    </div>
+  </mat-card>

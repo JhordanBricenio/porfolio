@@ -1,0 +1,99 @@
+<header id="topnav">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid solid fa-list"></i>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/logo j.png" alt="" width="30" height="24" class="img mb-3 d-inline-block align-text-top">
+      </a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="line font-weight-bold" routerLinkActive="active" [routerLink]="['/services']">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="line font-weight-bold" routerLinkActive="active" [routerLink]="['/proyectos/index']">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="line font-weight-bold" routerLinkActive="active" [routerLink]="['/blog']">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="line font-weight-bold" routerLinkActive="active" [routerLink]="['/contacto']">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="line font-weight-bold" routerLinkActive="active">Nosotros</a>
+          </li>
+        </ul>
+        <!--Registro dropdown-->
+        <!-- Default dropstart button -->
+        <div *ngIf="!authService.isAuntenitcated()" class="right-side btn-group dropstart ">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid solid fa-user"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/signup']">Iniciar sessión</a></li>
+          </ul>
+        </div>
+        <ul class="auto navbar-nav me-auto" >
+          <li class="nav-item">
+            <a class="line font-weight-bold" [routerLink]="['/signup']" routerLinkActive="active">Iniciar sessión</a>
+          </li>
+        </ul>
+
+
+
+        <button *ngIf="authService.isAuntenitcated()" name="eliminar" mat-fab color="warn">
+          <mat-icon (click)="logout()">logout</mat-icon>
+        </button>
+
+        <button class="d-flex py-2 px-3  navbar-toggler  example-icon mr-3" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+          aria-label="Example icon-button with menu icon">
+          <mat-icon class="icon">menu</mat-icon>
+        </button>
+
+
+      </div>
+    </div>
+
+  </nav>
+
+
+  <div class="offcanvas text-white offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+    aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+      <i class="fa-solid fa-arrow-right" data-bs-dismiss="offcanvas" aria-label="Close"></i>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+          <a class="text-white nav-link active" aria-current="page" [routerLink]="['/sobremi']">Sobre mí</a>
+        </li>
+        <li class="nav-item">
+          <a class="text-white nav-link" routerLinkActive="active" [routerLink]="['/blog']">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="text-white nav-link">Asesorías</a>
+        </li>
+
+
+      </ul>
+
+    </div>
+    <div class="container text-center mb-5 mt-3">
+      <a href="https://www.facebook.com/jhordan.bricenocaipo" target="_blank" role="button"><i
+          class="fa-brands red-social fa-facebook-f"></i>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=51963006126" target="_blank" role="button"><i
+          class="fab fa-whatsapp red-social2 main-color"></i>
+      </a>
+      <a href="https://github.com/JhordanBricenio" target="_blank" role="button"><i
+          class="fab fa-github red-social2 main-color"></i>
+      </a>
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,53 @@
+<mat-card>
+  <h1>Agregar nuevo Post</h1>
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+        <mat-form-field class="w100" appearance="fill">
+          <mat-label>Titulo</mat-label>
+          <input [(ngModel)]="blog.titulo" type="text" name="titulo" required placeholder="Digite el título" matInput>
+        </mat-form-field>
+
+        <div class="mb-5">
+          <ckeditor [(ngModel)]="blog.contenido" [formControl]="content" name="contenido" [config]="{      
+            height: '900px'
+          }" [editor]="Editor"></ckeditor>
+          <mat-error *ngIf="content.invalid">
+            {{getErrorMessage()}}
+          </mat-error>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Fecha Publicación</mat-label>
+              <input [(ngModel)]="blog.fecha" required name="fechaInicio" matInput [matDatepicker]="picker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Etiquetas</mat-label>
+          <mat-select [(ngModel)]="blog.etiquetas" name="etiquetas" [formControl]="toppings" multiple required>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping.nombre}}</mat-option>
+            <mat-select-trigger>
+              {{toppings.value?.[0] || ''}}
+              <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+                (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+            </mat-select-trigger>
+          </mat-select>
+        </mat-form-field>
+        <div class="container text-center mt-5">
+          <button mat-flat-button color="primary" class="m-2" [routerLink]="['/admin/indexPost']">Atrás</button>
+          <button mat-raised-button color="primary" type="submit" *ngIf="!blog.id else elseBlock">Guardar</button>
+
+          <ng-template #elseBlock>
+            <button mat-raised-button color="primary" class="ml10" (ngSubmit)="registro(registroForm)">Editar</button>
+          </ng-template>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,27 @@
+<mat-card class="mt-5">
+    <mat-action-list>
+      <div mat-subheader>Menu</div>
+      <button routerLink = "/admin" mat-list-item>
+        <mat-icon mat-list-icon>volunteer_activism</mat-icon> Inicio
+      </button>
+      <button mat-list-item routerLink = "/admin/profile">
+        <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
+      </button>
+      <button mat-list-item routerLink = "/admin/indexProyect">
+        <mat-icon mat-list-icon>settings_accessibility</mat-icon>Proyectos
+      </button>
+      <button mat-list-item routerLink = "/admin/indexPost">
+        <mat-icon mat-list-icon>compost</mat-icon>Blog
+      </button>
+      <button mat-list-item routerLink = "/admin/indexTags">
+        <mat-icon mat-list-icon>style</mat-icon>Etiquetas
+      </button>
+      <button mat-list-item>
+        <mat-icon mat-list-icon>add_to_queue</mat-icon>Agregar funcionalidad
+      </button>
+      <button mat-list-item (click) = "logout()">
+        <mat-icon mat-list-icon>ios_share</mat-icon>Salir
+      </button>
+    </mat-action-list>
+  </mat-card>
+

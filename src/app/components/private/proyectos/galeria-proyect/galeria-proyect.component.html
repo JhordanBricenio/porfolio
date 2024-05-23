@@ -1,0 +1,35 @@
+<div class="border-bottom">
+    <h1 class="mt-2 mt-md-4 mb-3 pt-5">Proyectos</h1>
+</div>
+<form #variedadForm="ngForm" enctype="multipart/form-data">
+    <div class="card box-shadow-sm">
+        <div class="card-header">
+            <h5 style="margin-bottom: 0px">Galería para proyecto: {{proyecto.nombre}}</h5>
+        </div>
+        <div class="card-body" *ngIf="proyecto">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-lg-12 form-group">
+                            <label for="">Descripción</label>
+                            <input type="text" class="form-control" [(ngModel)]="image.descripcion"
+                                name="descripcion" type="text" placeholder="Descripción de imagen" required />
+                        </div>
+                        <div class="input-group mb-3 mt-4">
+                            <input (change)="selecionarFoto($event)" type="file" class="form-control" id="inputGroupFile04"
+                              aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                            <button (click)="subirFoto()"  [disabled]="!fotoSeleccionada" class="btn btn-outline-secondary"
+                              type="button" id="inputGroupFileAddon04">Subir</button>
+                        </div>
+                    </div>
+                    <!--Tabla-->
+
+                </div>
+
+            </div>
+        </div>
+        <div class="card-footer">
+            <button  [routerLink]="['/admin/indexProyect']" class="btn btn-danger">Regresar</button>
+        </div>
+    </div>
+</form>

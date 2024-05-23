@@ -1,0 +1,73 @@
+<mat-card>
+    <h1>Agregar nuevo proyecto</h1>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form  #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input [(ngModel)]="proyecto.nombre" type="text" name="nombre" required
+                        placeholder="Digite el título" matInput>
+                </mat-form-field>
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Descripción</mat-label>
+                    <textarea [(ngModel)]="proyecto.descripcion" type="text" name="descripcion" required
+                        placeholder="Digite la descripción" matInput rows="8"></textarea>
+                </mat-form-field>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Fecha Inicio</mat-label>
+                            <input [(ngModel)]="proyecto.fechaInicio" required name="fechaInicio" matInput [matDatepicker]="picker">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Fecha Fin</mat-label>
+                            <input [(ngModel)]="proyecto.fechaFin" required name="fechaFin" matInput [matDatepicker]="pickerr">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="pickerr"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerr></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <mat-form-field appearance="fill" class="mt-4">
+                    <mat-label>Estado</mat-label>
+                    <mat-select [(ngModel)]="proyecto.estado"  required name="estado" >
+                      <mat-option *ngFor="let food of estado" [value]="food.value">
+                        {{food.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <mat-form-field class="w100 mt-4" appearance="fill">
+                    <mat-label>Repositorio</mat-label>
+                    <input [(ngModel)]="proyecto.url" type="text" name="url" required
+                        placeholder="Digite el repositorio" matInput>
+                </mat-form-field>
+
+                <mat-form-field class="w100 mt-4" appearance="fill">
+                    <mat-label>Link Demo</mat-label>
+                    <input [(ngModel)]="proyecto.demo" type="text" name="demo" required
+                        placeholder="Link demo" matInput>
+                </mat-form-field>
+
+
+                <div class="container text-center mt-5">
+                    <button mat-flat-button color="primary" class="m-2"
+                        [routerLink]="['/admin/indexProyect']">Atrás</button>
+                    <button mat-raised-button color="primary" type="submit" *ngIf="!proyecto.id else elseBlock" >Guardar</button>
+
+                    <ng-template #elseBlock>
+                        <button mat-raised-button color="primary" class="ml10"
+                        (ngSubmit)="registro(registroForm)">Editar</button>
+                    </ng-template>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-card>

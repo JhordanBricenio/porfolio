@@ -1,0 +1,176 @@
+#particles-js{
+  background: #000;
+  z-index: 1000;
+}
+.hola .p{
+  margin-left: 5rem;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: 10rem;
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+.hola .mt{
+  position: absolute;
+  top: 0;
+  left: 5;
+  opacity: 1;
+  
+}
+.hola .wrapper{
+  margin-top: 1rem;
+  position: absolute;
+  top: 0;
+  left: 5;
+  opacity: 1;
+}
+.hola .desc{
+  margin-top: 10rem;
+  position: absolute;
+  color: #fff;
+  margin-left: 5rem;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+.hola .desc p{
+  margin-top: 4rem;
+  color: rgb(195, 201, 201);
+
+}
+.hola .desc h5{
+  margin-top: 15rem;
+}
+.mt{
+  margin-top: 7rem;
+}
+.bg{
+  background-color: #202942;
+  color: white;
+}
+.bg-image{
+  background-color: #000;
+  color: white;
+  margin-top: 0;
+}
+#about{
+  margin-top: 10rem;
+}
+.saludo{
+  font-size: 22px;
+   font-family: Courier New;
+  color: rgb(99 102 241) !important;
+
+}
+.heading-name {
+  font-size: 1.5em!important;
+  height: 1.5em!important;
+  padding-left: 45px!important;
+}
+.heading {
+  font-size: 2.5em!important;
+  padding-left: 50px!important;
+}
+/***************/
+.wrapper{
+  margin-top: 2rem;
+}
+.wrapper .static-txt{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+
+}
+.wrapper .dinamic-texts{
+  margin-left: 15px;
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
+}
+.descripcion{
+  font-size: 17px;
+  font-family: Courier New;
+  color: #fff;
+  position: relative;
+  margin-top: 5rem;
+  top: 0;
+  
+}
+
+.dinamic-texts li{
+  color: #FF535B;
+  list-style: none;
+  font-size: 60px;
+  font-weight: 300;
+  position: relative;
+  top: 0;
+  animation: slide 6s steps(4) infinite;
+}
+@keyframes slide{
+  100%{
+    top: -360px;
+  }
+  
+}
+.dinamic-texts li span{
+  position: relative;
+  
+}
+.dinamic-texts li span::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-left: 2px solid #FF535B;
+  animation: animate 1.9s steps(16) infinite;
+}
+@keyframes animate{
+  100%{
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+  
+}
+.cv{
+  background: #fff;
+  color: #000;
+}
+.context{
+  font-family: Courier New;
+  font-size: 15px;
+}
+.habilidades{
+  background: rgb(247, 244, 244);
+  color: rgb(72, 70, 70);
+  font-family: Courier New;
+}
+.contenedor01 i{
+  font-size: 70px;
+  margin-left: auto;
+  position: relative;
+}
+.contenedor01 i:hover{
+  opacity: 1;
+  filter: blur(0px);
+  color: rgb(135, 137, 244);
+  transition: all 1s ease;
+}
+.netcore{
+  font-size: 40px;
+  color: rgb(72, 70, 70);
+   
+}
+
+
+.new-design {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}

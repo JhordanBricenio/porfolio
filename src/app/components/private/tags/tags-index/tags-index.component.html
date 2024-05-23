@@ -1,0 +1,29 @@
+<mat-card class="mt-5">
+    <mat-list>
+      <div mat-subheader>
+        Todas las Tags
+      </div>
+      <mat-list-item *ngFor="let item of tags">
+        <mat-icon  mat-list-icon>category</mat-icon>
+        <div mat-line>{{item.nombre}}</div>
+        <div mat-line>{{item.color}}</div>
+        <mat-card-content>
+          <mat-card-actions>
+            <button class="m-2" [routerLink]="['/admin/editTag',item.id]" mat-flat-button
+              color="primary">Editar</button>
+            <button name="eliminar" (click)="delete(item)" mat-fab color="warn">
+              <mat-icon>auto_delete</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  
+    <div class="container text-center mt-2">
+      <a routerLink="/admin/createTags" mat-mini-fab color="primary"
+        aria-label="Example icon button with a plus one icon">
+        <mat-icon mat-list-icon>library_add</mat-icon>
+      </a>
+    </div>
+  </mat-card>

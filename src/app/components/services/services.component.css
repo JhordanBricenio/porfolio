@@ -1,0 +1,47 @@
+.bg{
+    background-color: #000;
+}
+.bg-image{
+    background-color: #000;
+}
+
+
+.mb-5{
+    margin-top: 5rem;
+}
+.container{
+    margin-top: auto;
+}
+.shadow{
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+    padding:2px;
+    margin-bottom: 1cm;
+    border-radius: 3%;
+}
+.shadow-img {
+    filter: drop-shadow(-2px 2px 15px rgba(255, 136, 0, 0.562));
+}
+.underline:hover{
+    border-bottom: 2px solid #ff9800;
+    transition: all 0.5s ease;
+}
+.contacto{
+    font-style: italic;
+    color: rgb(180, 74, 74);
+    
+}
+.text-black{
+    color: #fff !important;
+}
+.text{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: rgb(99 102 241) !important;
+}
+.main-color{
+    font-size: 1.5rem;
+    color: #ff9800 !important;
+}
+.font-weight-bold {
+    font-weight: 700!important;
+}

@@ -1,0 +1,23 @@
+
+
+html, body { height: 100%; }
+body {
+     margin: 0;
+      font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+.active{
+    color:var(--Oscuro)!important;
+
+
+}
+:root {
+    --Oscuro: #0a0a0a;
+    --mainColor: #ff9800;
+    --secondaryColor: #d88200;
+    --silenciado: #ffffffb7;
+  }
+
+
+
+
+  

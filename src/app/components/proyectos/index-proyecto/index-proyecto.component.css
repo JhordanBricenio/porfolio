@@ -1,0 +1,38 @@
+.container{
+    margin-top: 3cm;
+    margin-bottom:2cm;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .example-option-img {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  
+  [dir='rtl'] .example-option-img {
+    margin-right: 0;
+    margin-left: 8px;
+  }
+
+.btn-primary{
+  background-color: #FF535B !important;
+  border: 1px solid #FF535B !important;
+    color: #fff;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff;
+  background: none;
+}
+
+/*Ubicar paginator al costado derecho*/
+.left{
+  float: right;
+}

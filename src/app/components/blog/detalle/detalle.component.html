@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="post-detail">
+        <div class="post-header">
+          <h1 class="mt-2">{{blog.titulo}}</h1>
+          <img *ngIf="blog?.imagen"  src="http://localhost:8080/api/upload/img/{{blog.imagen}}" class="mb-4 card-img-top"> 
+    
+        </div>
+        <div class="post-tags">
+          <mat-chip-list class="text-center">
+            <mat-chip class="custom-chip" *ngFor="let tag of blog.etiquetas"  [ngClass]="'bg-'+ tag.color">{{tag.nombre}}</mat-chip>
+          </mat-chip-list>
+        </div>
+        <div class="post-content">
+          <p [innerHTML]="blog.contenido"></p>
+        </div>
+      </div>
+</div>

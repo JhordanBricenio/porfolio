@@ -1,0 +1,50 @@
+.footer {
+  background: #202942;
+  padding: 60px 0;
+  position: relative;
+  color: #adb5bd;
+}
+
+.text-white {
+  text-decoration: none;
+}
+
+.lead {
+  font-size: 12px;
+}
+
+.red-social {
+  color: #adb5bd !important;
+  border-radius: 50%;
+  border: 2px solid #adb5bd;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 0.3s ease-in-out;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.red-social2 {
+  color: #adb5bd !important;
+  border-radius: 50%;
+  border: 2px solid #adb5bd;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  transition: 0.3s ease-in-out;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.red-social:hover {
+  color: #fff !important;
+  border: 2px solid #fff;
+}
+
+.red-social2:hover {
+  color: #fff !important;
+  border: 2px solid #fff;
+}
