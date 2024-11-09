@@ -143,13 +143,14 @@
 .context{
   font-family: Courier New;
   font-size: 15px;
+  
 }
 .habilidades{
   background: rgb(247, 244, 244);
   color: rgb(72, 70, 70);
   font-family: Courier New;
 }
-.contenedor01 i{
+.contenedor01 i {
   font-size: 70px;
   margin-left: auto;
   position: relative;
@@ -166,11 +167,15 @@
    
 }
 
+.icon {
+  font-size: 70px;
+  margin-left: auto;
+  position: relative;
+}
 
-.new-design {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
+.icon:hover {
+  opacity: 1;
+  filter: blur(0px);
+  color: rgb(135, 137, 244);
+  transition: all 1s ease;
 }

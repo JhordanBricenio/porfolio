@@ -7,12 +7,17 @@ export class CargarScritsService {
 
   constructor() { }
 
-  cargarScripts( archivos: string[] ){
-    for (let archivo of archivos) {
-      const script = document.createElement('script');
-      script.src = `./assets/js/${archivo}.js`;
-      let body = document.getElementsByTagName('body')[0];
-      body.appendChild(script);
-    }
+  cargarScripts(archivos: string[]): Promise<void[]> {
+    const promises = archivos.map(archivo => {
+      return new Promise<void>((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `./assets/js/${archivo}.js`;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`No se pudo cargar el script ${archivo}`));
+        document.body.appendChild(script);
+      });
+    });
+
+    return Promise.all(promises);
   }
 }

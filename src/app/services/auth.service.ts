@@ -13,7 +13,7 @@ export class AuthService {
   private _usuario: Usuario;
   private _token: string;
 
-  public url = 'http://localhost:8080/auth'
+  public url = 'http://localhost:8080/api/auth'
 
   constructor(private http: HttpClient) { }
 
@@ -21,8 +21,8 @@ export class AuthService {
     if (this._usuario != null) {
       return this._usuario;
     }
-    else if (this._usuario == null && sessionStorage.getItem('usuario') != null) {
-      this._usuario = JSON.parse(sessionStorage.getItem('usuario')) as Usuario;
+    else if (this._usuario == null && sessionStorage.getItem('username') != null) {
+      this._usuario = JSON.parse(sessionStorage.getItem('username')) as Usuario;
       return this._usuario;
     }
     return new Usuario();
@@ -32,8 +32,8 @@ export class AuthService {
     if (this._token != null) {
       return this._token;
     }
-    else if (this._token == null && sessionStorage.getItem('token') != null) {
-      this._token = sessionStorage.getItem('token');
+    else if (this._token == null && sessionStorage.getItem('jwt') != null) {
+      this._token = sessionStorage.getItem('jwt');
       return this._token;
     }
     return null;
@@ -41,7 +41,7 @@ export class AuthService {
 
   public login(loginData: any): Observable<any> {
 
-    return this.http.post<any>(`${this.url}/generate-token`, loginData);
+    return this.http.post<any>(`${this.url}/sign-in`, loginData);
   }
   public agregarAuthorizationHeader() {
     let token = this.token;
@@ -54,11 +54,9 @@ export class AuthService {
   public guardarUsuario(accessToken: string) {
     let payload = this.obtenerDatosToken(accessToken);
     this._usuario = new Usuario();
-    this._usuario.id = payload.id;
-    this._usuario.nombres = payload.nombre;
-    this._usuario.apellidos = payload.apellido;
-    this._usuario.email = payload.email;
-    this._usuario.roles = payload.authorities;
+    this._usuario.nombres = payload.user;
+    this._usuario.email = payload.sub;
+    this._usuario.roles = payload.auth;
     sessionStorage.setItem('usuario', JSON.stringify(this._usuario));
 
   }
@@ -73,8 +71,8 @@ export class AuthService {
     return null;
   }
   isAuntenitcated(): boolean {
-    let payload = this.obtenerDatosToken(this.token);
-    if (payload != null && payload.nombre && payload.nombre.length > 0) {
+    let payload = this.obtenerDatosToken(this.token);      
+    if (payload != null && payload.sub > 0) {
       return true;
     }
     return false;

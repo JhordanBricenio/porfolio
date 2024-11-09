@@ -1,53 +1,194 @@
-<div class="container">
-    <div class="row mt-5 mb-2 ">
-      <div class="col-md-2">
-        <h3 class="text-uppercase">Filtros</h3>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Proyecto</mat-label>
-            <input matInput  name="filtro" [(ngModel)]="filtro" placeholder="Buscar por nombre..."
-                   aria-label="State"
-                   [formControl]="stateCtrl" >
-            <mat-icon *ngIf="filtro.length > 0"  style="border:none ; background:none; cursor: pointer; position: absolute;" (click)="filtrar()">search</mat-icon>
-          </mat-form-field>
-          <br>    
-          <mat-slide-toggle
-            [checked]="stateCtrl.disabled"
-            (change)="stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()">
-            Desabilitar?
-          </mat-slide-toggle>
-          <button type="submit" (click)="reset()" class="btn btn-dark mt-3">Todos</button>
-      </div>
-        <div class="col-10 ">
-          <h3 class="text-center text-uppercase">Proyectos</h3>
-          <div class="row m-2">
-            <ng-container *ngIf="proyectos.length>0">
-            <div *ngFor="let item of proyectos" class="col-md-4 mb-4">
-              <div class="card" >
-                <img *ngIf="item?.foto" [routerLink]="'/proyectos/verProyecto/'+item.id+'/'+item.nombre" style="cursor: pointer;" src="http://localhost:8080/api/upload/img/{{item.foto}}" class="card-img-top" alt="...">
-                <img *ngIf="!item?.foto" src="" class="card-img-top" alt="no image">
-                <div class="card-body">
-                  <h5 class="card-title">{{item.nombre}}</h5>
-                  <p class="card-text">{{ item.descripcion | slice:0:100 }}</p>
-                  <a [routerLink]="'/proyectos/verProyecto/'+item.id+'/'+item.nombre" class="btn btn-primary">Ver más</a>
-                </div>
-              </div>
-            </div>
-          </ng-container>
-            <ng-container *ngIf="proyectos.length<=0">
-              <mat-list-item>
-                <mat-icon mat-list-icon>info</mat-icon>
-                <div mat-line>No hay proyectos</div>
-              </mat-list-item>
-            </ng-container>
-            
-            
-          </div>
-          <div class="left">
-            <paginator-app *ngIf="pagination" [pagination]="pagination"></paginator-app>
-          </div>
-
-
-          
+<div class="container ">
+  <h1 class="text-center  libre-baskerville-regular-italic  mt-5">Proyectos</h1>
+  <div class="container-center mx-auto px-5">
+    <p class="text-center mt-0">
+      En esta sección, encontrarás una selección de proyectos en los que he trabajado,
+      que muestran mi experiencia en desarrollo de software, diseño de interfaces y soluciones
+      tecnológicas.
+    </p>
+    <hr class="mx-auto w-50" style="border: 2px solid #007bff;">
+  </div>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="col">
+      <div class="card project-card p-1 shadow-lg rounded-4">
+        <h2 class="text-center fw-bold mb-0">Restaurant App</h2>
+        <hr class="mx-auto w-50 mt-1" style="border: 2px solid #ec0339;">
+        <p class="text-center px-1">
+          Sistema web creado para llevar un mejor control en las ventas, optimización de tareas,
+          registro de clientes, servicio de delivery, entre otros, construido y desplegado de manera
+          local, adaptado a los requerimientos del cliente.
+        </p>
+        <img src="assets/img/restaurant.png" alt="Imagen del proyecto Restaurant App" class="project-image">
+        <div class="d-flex grid justify-content-between px-3 mb-2 mt-2">
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-angular"></i>
+            <span class="tooltip-text">Angular</span>
+          </button>
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-solid  fa-leaf"></i>
+            <span class="tooltip-text">Spring</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-github icon"></i>
+            <span class="tooltip-text">GitHub</span>
+          </button>
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fab fa-java"></i>
+            <span class="tooltip-text">Java</span>
+          </button>
         </div>
-  
+      </div>
     </div>
+    <div class="col">
+      <div class="card project-card p-1 shadow-lg rounded-4">
+        <h2 class="text-center fw-bold mb-0">Top Secret App</h2>
+        <hr class="mx-auto w-50 mt-1" style="border: 2px solid #007bff;">
+        <p class="text-center px-1">
+          Landing page y sistema de gestión hotelera que optimiza la administración de reservas,
+          check-ins y check-outs, facilitando una experiencia fluida tanto para el personal como para los huéspedes.
+        </p>
+        <img src="assets/img/hotel.png" alt="Imagen del proyecto Restaurant App" class="project-image">
+        <div class="d-flex grid justify-content-between px-3 mb-2 mt-2">
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-angular"></i>
+            <span class="tooltip-text">Angular</span>
+          </button>
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-solid  fa-leaf"></i>
+            <span class="tooltip-text">Spring</span>
+          </button>
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fab fa-java"></i>
+            <span class="tooltip-text">Java</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-github icon"></i>
+            <span class="tooltip-text">GitHub</span> <!-- Texto que aparece al pasar el cursor -->
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card p-1 shadow-lg rounded-4">
+        <h2 class="text-center fw-bold mb-0">The Viking System</h2>
+        <hr class="mx-auto w-50 mt-1" style="border: 2px solid #ec0339;">
+        <p class="text-center px-1">
+          Sistema que facilita la gestión de pedidos, reservas y control de inventario en tiempo real.
+          Esta solución permite a los empleados manejar órdenes de manera eficiente,
+          agilizar el servicio al cliente y optimizar el flujo de trabajo.
+        </p>
+        <img src="assets/img/vikingo.png" alt="Imagen del proyecto Restaurant App" class="project-image">
+        <div class="d-flex grid justify-content-between px-3 mb-2 mt-2">
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-angular"></i>
+            <span class="tooltip-text">Angular</span>
+          </button>
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-solid  fa-leaf"></i>
+            <span class="tooltip-text">Spring</span>
+          </button>
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-deploydog"></i>
+            <span class="tooltip-text">Despliegue</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-github icon"></i>
+            <span class="tooltip-text">GitHub</span> <!-- Texto que aparece al pasar el cursor -->
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card p-1 shadow-lg rounded-4">
+        <h2 class="text-center fw-bold mb-0">T&M TACTICAL</h2>
+        <hr class="mx-auto w-50 mt-1" style="border: 2px solid #007bff;">
+        <p class="text-center px-1">
+          E-commerce especializado en la venta de ropa táctica,
+          diseñado para ofrecer una experiencia de compra segura y eficiente.
+          Permite a los clientes explorar una variedad de productos tácticos, con descripciones detalladas
+          y opciones de filtro.
+        </p>
+        <img src="assets/img/proyecto.jpg" alt="Imagen del proyecto Restaurant App" class="project-image">
+        <div class="d-flex grid justify-content-between px-3 mb-2 mt-2">
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-angular"></i>
+            <span class="tooltip-text">Angular</span>
+          </button>
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-solid  fa-leaf"></i>
+            <span class="tooltip-text">Spring</span>
+          </button>
+          <button class="aling-items-center btn__tec shadow-lg rounded-3">
+            <i class="fab fa-java"></i>
+            <span class="tooltip-text">Java</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-digital-ocean"></i>
+            <span class="tooltip-text">Digital Ocean</span> <!-- Texto que aparece al pasar el cursor -->
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card p-1 shadow-lg rounded-4">
+        <h2 class="text-center fw-bold mb-0">Aras App</h2>
+        <hr class="mx-auto w-50 mt-1" style="border: 2px solid #007bff;">
+        <p class="text-center px-1">
+          Landig page y sistema de gestión pedagógica, desarrollada para optmizar tareas de registro
+          de alumnos, profesores, servicios, control de asistencia, noticias, pagos entre otros. 
+        </p>
+        <img src="assets/img/colege.png" alt="Imagen del proyecto Restaurant App" class="project-image">
+        <div class="d-flex grid justify-content-between px-3 mb-2 mt-2">
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-angular"></i>
+            <span class="tooltip-text">Angular</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-solid fa-leaf"></i>
+            <span class="tooltip-text">Spring</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fab fa-java"></i>
+            <span class="tooltip-text">Java</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-github icon"></i>
+            <span class="tooltip-text">GitHub</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card p-1 shadow-lg rounded-4">
+        <h2 class="text-center fw-bold mb-0">Restaurant App</h2>
+        <hr class="mx-auto w-50 mt-1" style="border: 2px solid #007bff;">
+        <p class="text-center px-1">
+          Ofrezco servicios de desarrollo de software personalizado, rediseño de interfaces,
+          y diseño de UX/UI, combino tecnología y estrategias de diseño para
+          mejorar la usabilidad y satisfacción del cliente.
+        </p>
+        <img src="assets/img/desarrollo.jpg" alt="Imagen del proyecto Restaurant App" class="project-image">
+        <div class="d-flex grid justify-content-between px-3 mb-2 mt-2">
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-angular"></i>
+            <span class="tooltip-text">Angular</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-solid fa-leaf"></i>
+            <span class="tooltip-text">Spring</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fab fa-java"></i>
+            <span class="tooltip-text">Java</span>
+          </button>
+          <button class="align-items-center btn__tec shadow-lg rounded-3">
+            <i class="fa-brands fa-github icon"></i>
+            <span class="tooltip-text">GitHub</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agrega más cards en otras columnas (manteniendo la estructura) -->
+  </div>
+</div>

@@ -1,38 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
 .container{
     margin-top: 3cm;
     margin-bottom:2cm;
 }
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  .example-option-img {
-    vertical-align: middle;
-    margin-right: 8px;
-  }
-  
-  [dir='rtl'] .example-option-img {
-    margin-right: 0;
-    margin-left: 8px;
-  }
-
-.btn-primary{
-  background-color: #FF535B !important;
-  border: 1px solid #FF535B !important;
-    color: #fff;
+.container-center {
+  max-width: 600px; /* Ajusta el ancho máximo según prefieras */
+  padding: 0 20px; /* Opcional: agrega un poco de padding horizontal para reducir el ancho */
 }
-.mat-form-field-appearance-fill .mat-form-field-flex {
-  background-color: #fff;
+
+.card {
+  max-width: 800px;
+  border: none;
+  background-color: white;
+}
+
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Efecto de crecimiento al pasar el cursor */
+.project-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Ajusta el valor para mayor o menor crecimiento */
+}
+
+/* Estilos para la imagen del proyecto */
+.project-image {
+  width: 100%; /* Hace que la imagen ocupe todo el ancho del card */
+  max-height: 150px; /* Controla la altura máxima de la imagen */
+  object-fit: cover; /* Recorta la imagen para ajustarse al contenedor */
+  margin-top: 10px; /* Espacio entre el texto y la imagen */
+  border-radius: 8px; /* Redondea los bordes de la imagen */
+}
+
+.btn__tec{
+  width: 50px;
+  border: none;
   background: none;
 }
 
-/*Ubicar paginator al costado derecho*/
-.left{
-  float: right;
+.btn__tec i{
+  font-size: 30px;
+  padding: 5px;
+
+}
+
+.btn__tec .fa-angular{
+  color: #ec0339;
+}
+.btn__tec .fa-leaf{
+  color: #6cb52d;
+}
+
+.btn__tec .fa-java{
+  color: #2b85be;
+}
+
+
+/* falta */
+.btn__tec i:hover{
+  color: rgb(135, 137, 244);
+}
+
+/* Estilo del botón */
+.btn__tec {
+  position: relative; /* Necesario para posicionar el tooltip */
+}
+
+/* Estilo del tooltip */
+.tooltip-text {
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0; /* Oculto visualmente */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 4px 8px;
+  position: absolute;
+  bottom: -25px; /* Posiciona el tooltip debajo del botón */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* Asegura que el tooltip se muestre sobre otros elementos */
+}
+
+/* Muestra el tooltip al pasar el cursor */
+.btn__tec:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.btn__tec .fa-digital-ocean{
+  color: #007af7;
 }

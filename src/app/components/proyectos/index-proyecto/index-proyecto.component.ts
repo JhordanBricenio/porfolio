@@ -25,31 +25,8 @@ export class IndexProyectoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.initData();
-  }
-  initData(){
-    this.activateRoute.paramMap.subscribe((params) => {
-      let page: number =+params.get('page');
-      if (!page) {
-        page = 0;
-      }      
-      this.proyectoService.getProyectsBySearch(page).subscribe((response) => {
-          this.proyectos = response.content as Proyecto[];
-          this.pagination = response;                  
-        });
-    });
 
   }
-  filtrar() {
-    if (this.filtro != null) {      
-      this.proyectoService.getProyectsBySearch(0,this.filtro).subscribe((response) => {
-        this.proyectos = response.proyects as Proyecto[];        
-      })
-    } 
-  }
-  reset(){
-    this.filtro = null;
-    this.ngOnInit();
-  }
+  
 
 }

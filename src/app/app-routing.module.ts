@@ -40,7 +40,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'admin', component: DashboardAdminComponent, canActivate: [AuthGuard],
+    path: 'admin', component: DashboardAdminComponent,
     children: [
       { path: 'profile', component: ProfileComponent },
       { path: 'indexProyect', component: IndexProyectosComponent },

@@ -4,35 +4,61 @@
   </figure>
 </div>
 <section class="pt-2">
-  <ng-container *ngIf="posts.length>0">
-    <div *ngFor="let item of posts" class="container w-75 mx-auto  mt-3 mb-3">
+  <ng-container>
+    <div class="container w-75 mx-auto  mt-3 mb-3">
       <div class="row ">
         <div class="col-md-6 mb-3">
-          <div  style="position: relative;" >
-            <mat-chip-list style="position: absolute; top: 200px; left: 50%; transform: translate(-50%, -50%);" class="text-center ">
-                <h3>
-                  <span style="margin-left: 3px; color: black;" *ngFor="let tag of item.etiquetas" 
-                   class="badge"[ngClass]="'bg-'+ tag.color">{{tag.nombre}}</span>
-                </h3>
-            </mat-chip-list>
+          <div style="position: relative;">
+            <div style="position: absolute; top: 200px; left: 50%; transform: translate(-50%, -50%);"
+              class="text-center ">
+              <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-success">Despliegue</span>
+              <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-warning">Servidor-VPS</span>
           </div>
-
-          <figure >
-            <img *ngIf="item?.imagen" [routerLink]="'/blog/verPost/'+item.id" style="cursor: pointer;"
-              src="http://localhost:8080/api/upload/img/{{item.imagen}}" class="card-img-top" alt="No Image">
+          </div>
+          <figure>
+            <img [routerLink]="'/blog/verPost/1'" style="cursor: pointer;" src="assets/img/laptop.jpg"
+              class="card-img-top" alt="No Image">
           </figure>
-          
-
         </div>
         <div class="col-md-6">
-          <h2 class="text-center">{{item.titulo}}</h2>
+          <h2 class="text-center">Digital Ocean</h2>
           <p>
-            <span class="text-muted">Posted </span> {{item.fecha | date:'mediumDate'}}
+            <span class="text-muted">Posted </span> 23/02/2024
           </p>
-          <p [innerHTML]="item.contenido | slice:0:maxCaracteres">{{ item.contenido.length > maxCaracteres ? '...' : ''
-            }}</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi labore illum cupiditate
+            numquam fugiat, quas eligendi, excepturi natus
+            provident voluptatum consectetur maxime. Asperiores autem expedita tempora natus, impedit in! Error.</p>
           <button class="btn btn-primary">
-            <a [routerLink]="'/blog/verPost/'+item.id" class="text-white text-uppercase">Read More</a>
+            <a [routerLink]="'/blog/verPost/1'" class="text-white text-uppercase">Read More</a>
+          </button>
+
+
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-md-6 mb-3">
+          <div style="position: relative;">
+            <div style="position: absolute; top: 200px; left: 50%; transform: translate(-50%, -50%);"
+              class="text-center ">
+              <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-info">IA Generativa</span>
+              <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-danger">Tecnología</span>
+            </div>
+          </div>
+          <figure>
+            <img [routerLink]="'/blog/verPost/1'" style="cursor: pointer;" src="assets/img/laptop.jpg"
+              class="card-img-top" alt="No Image">
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <h2 class="text-center">IA Generativa</h2>
+          <p>
+            <span class="text-muted">Posted </span> 10/08/2024
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi labore illum cupiditate
+            numquam fugiat, quas eligendi, excepturi natus
+            provident voluptatum consectetur maxime. Asperiores autem expedita tempora natus, impedit in! Error.</p>
+          <button class="btn btn-primary">
+            <a [routerLink]="'/blog/verPost/1'" class="text-white text-uppercase">Read More</a>
           </button>
 
 
@@ -40,23 +66,11 @@
       </div>
     </div>
   </ng-container>
-
-
-  <div class="container">
-    <ng-container *ngIf="posts.length==0">
-      <mat-list-item>
-        <mat-icon mat-list-icon>info</mat-icon>
-        <div mat-line>No hay posts</div>
-      </mat-list-item>
-    </ng-container>
-
-
-  </div>
   <div class="container">
     <div class="row">
       <div class="col-12 mb-5 float-right">
         <div class="card-footer mb-5">
-          <app-paginator *ngIf="pagination" [pagination]="pagination"></app-paginator>
+          <app-paginator></app-paginator>
         </div>
       </div>
     </div>
