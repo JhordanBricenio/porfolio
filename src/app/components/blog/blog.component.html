@@ -6,70 +6,67 @@
 <section class="pt-2">
   <ng-container>
     <div class="container w-75 mx-auto  mt-3 mb-3">
-      <div class="row ">
-        <div class="col-md-6 mb-3">
-          <div style="position: relative;">
-            <div style="position: absolute; top: 200px; left: 50%; transform: translate(-50%, -50%);"
-              class="text-center ">
-              <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-success">Despliegue</span>
-              <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-warning">Servidor-VPS</span>
-          </div>
-          </div>
+      <div class="row row-cols-1 row-cols-md-2">
+        <div class="col  mb-3">
           <figure>
-            <img [routerLink]="'/blog/verPost/1'" style="cursor: pointer;" src="assets/img/laptop.jpg"
+            <img [routerLink]="'/blog/verPost/1'" style="cursor: pointer;" src="assets/img/blog.jpg"
               class="card-img-top" alt="No Image">
           </figure>
+          <div class="text-center ">
+            <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-success">Despliegue</span>
+            <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-warning">Servidor-VPS</span>
+          </div>
         </div>
-        <div class="col-md-6">
-          <h2 class="text-center">Digital Ocean</h2>
+        <div class="col ">
+          <h2 class="text-center">Digital Ocean Full Stack</h2>
           <p>
-            <span class="text-muted">Posted </span> 23/02/2024
+            <span class="text-muted">Posteado </span>  23/02/2024
           </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi labore illum cupiditate
-            numquam fugiat, quas eligendi, excepturi natus
-            provident voluptatum consectetur maxime. Asperiores autem expedita tempora natus, impedit in! Error.</p>
+          <p>
+            El despliegue de una aplicación hecha en Angular y Spring en DigitalOcean implica
+            configurar un entorno en el que el frontend y el backend puedan comunicarse de manera
+            eficiente y segura. En este proceso:
+            <li>
+              Configuras un Droplet en DigitalOcean, que es una máquina virtual que servirá como servidor para tu
+                aplicación.
+            </li>
+          </p>
           <button class="btn btn-primary">
-            <a [routerLink]="'/blog/verPost/1'" class="text-white text-uppercase">Read More</a>
+            <a [routerLink]="'/blog/verPost/1'" class="text-white text-uppercase">Leer más...</a>
           </button>
-
-
         </div>
       </div>
-      <div class="row ">
+      <div class="row mt-3 row-cols-1 row-cols-md-2">
         <div class="col-md-6 mb-3">
-          <div style="position: relative;">
-            <div style="position: absolute; top: 200px; left: 50%; transform: translate(-50%, -50%);"
-              class="text-center ">
-              <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-info">IA Generativa</span>
-              <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-danger">Tecnología</span>
-            </div>
-          </div>
           <figure>
-            <img [routerLink]="'/blog/verPost/1'" style="cursor: pointer;" src="assets/img/laptop.jpg"
+            <img [routerLink]="'/blog/verPost/1'" style="cursor: pointer;" src="assets/img/proyecto.jpg"
               class="card-img-top" alt="No Image">
           </figure>
+          <div class="text-center ">
+            <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-info">IA Generativa</span>
+            <span style="margin-left: 3px; color: black;" class="p-2 badge text-bg-danger">Tecnología</span>
+          </div>
         </div>
         <div class="col-md-6">
           <h2 class="text-center">IA Generativa</h2>
           <p>
-            <span class="text-muted">Posted </span> 10/08/2024
+            <span class="text-muted">Posteado </span>  10/06/2024
           </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi labore illum cupiditate
-            numquam fugiat, quas eligendi, excepturi natus
-            provident voluptatum consectetur maxime. Asperiores autem expedita tempora natus, impedit in! Error.</p>
+          <p>La inteligencia artificial generativa (IA generativa) es un subcampo de la inteligencia
+            artificial que se centra en el desarrollo de sistemas capaces de generar contenido nuevo,
+            tales como imágenes, música,
+            texto, video, etc., que es similar en estilo y calidad a lo creado por humanos. </p>
           <button class="btn btn-primary">
-            <a [routerLink]="'/blog/verPost/1'" class="text-white text-uppercase">Read More</a>
+            <a [routerLink]="'/blog/verPost/1'" class="text-white text-uppercase">Leer más...</a>
           </button>
-
-
         </div>
       </div>
     </div>
   </ng-container>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 mb-5 float-right">
-        <div class="card-footer mb-5">
+  <div class="container d-flex justify-content-end">
+    <div class="row w-100">
+      <div class="col-12 d-flex justify-content-end mb-5">
+        <div class="mb-5">
           <app-paginator></app-paginator>
         </div>
       </div>

@@ -1,35 +1,29 @@
-<div class="container ">
-    <!--Crear una fila con 4 columnas-->
-    <div class="row px-5 mt-5">
-        <h1 class="text-center mb-5">CONTENIDO</h1>
-        <!--Columna 1-->
-        <div class=" col-lg-3 text-center mb-5">
+<div class="container">
+    <h1 class="text-center mb-5">CONTENIDO</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 px-5 mt-5">     
+        <div class="text-center mb-5">
             <img src="assets/img/desarrollo.jpg" class="card-img-top mb-3" alt="...">
             <a [routerLink]="['/services']" class="title">Servicios</a>
-            <p class=" card-text mt-2">Ofrezco servicios de desarrollo de software personalizado, rediseño de interfaces y diseño.</p>
-            
+            <p class=" card-text mt-2">Ofrezco servicios de desarrollo de software personalizado, rediseño de interfaces y diseño.</p>           
         </div>
-        <!--Columna 2-->
-        <div class=" col-lg-3 text-center mb-5">
+        <div class="text-center mb-5">
             <img src="assets/img/proyecto.jpg" class="card-img-top mb-3" alt="...">
             <a [routerLink]="['/proyectos/index']" class="title">Proyectos</a>
             <p class="card-text mt-2">Selección de proyectos en los que he trabajado,
                 que muestran mi experiencia en desarrollo de software.</p>
                 
         </div>
-        <!--Columna 3-->
-        <div class=" col-lg-3 text-center mb-5">
+        <div class="text-center mb-5">
             <img src="assets/img/student.jpg" class="card-img-top mb-3" alt="...">
             <a [routerLink]="['/services']" class="title ">Asesorías</a>
             <p class="card-text mt-2">Brindo asesorías en tecnologías como Java, Spring Framework, Angular, entre otras.</p>
                 
         </div>
-        <div class=" col-lg-3 text-center mb-5">
+        <div class="text-center mb-5">
             <img src="assets/img/blog.jpg" class="card-img-top mb-3" alt="...">
             <a [routerLink]="['/blog']" class="title">Blog</a>
-            <p class="card-text mt-2">Colección de posts sobre tecnología, despliegue de aplicaciones
-                solución de problemas y hobbies.</p>
-                
+            <p class="card-text mt-2">Colección de posts sobre tecnología, despliegue de aplicaciones,
+                solución de problemas y hobbies.</p>  
         </div>
     </div>
 

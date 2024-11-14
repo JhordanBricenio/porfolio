@@ -1,66 +1,22 @@
-.card {
-  max-width: 800px;
-  border: none;
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
-.card-custom {
-  background-color: #f5f9fd;
-  border-radius: 15px;
-}
-.web-dev-card {
-  background-color: #fff4f4;
-  border-radius: 15px;
+.container-fluid{
+  margin-top: 1cm;
+  background: rgb(247, 244, 244);
+  color: rgb(72, 70, 70);
+  font-family: Courier New;
 }
 
-.card-custom .icon {
-  color: #007bff;
-  width: 50px;
+.container-center {
+  max-width: 600px; 
+  padding: 0 20px; 
 }
 
-.card-custom h5 {
-  color: #333;
-}
-
-.card-custom:nth-child(2) .icon {
-  color: #ff007a;
-}
-
-.card-custom:nth-child(3) .icon {
-  color: #ff5722;
-}
-
-.card-custom:nth-child(4) .icon {
-  color: #4caf50;
-}
-
-.card-custom p {
-  color: #666;
-}
-
-.container-fluid {
-  background-color: #e0f7fa;
-}
-
-.ui-ux-card .icon {
-  color: #d3aee1;
-  font-size: 30px;
-}
-.ui-ux-card  {
-  background-color: #ffffff;
-  border-radius: 15px;
-}
-
-.mobile-card .icon {
-  color: #d566ff;
+.text-start i{
   font-size: 30px;
 }
 
-.photography-card .icon {
-  font-size: 30px;
-  color: #ff6080;
-}
-
-.web-dev-card .icon {
-  color: #d86ffe;
-  font-size: 30px;
-}

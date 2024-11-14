@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-
 .container{
     margin-top: 3cm;
-    margin-bottom:2cm;
 }
 .container-center {
   max-width: 600px; /* Ajusta el ancho máximo según prefieras */
